@@ -1,7 +1,7 @@
 # The scheduler Assignment
 In this project we are buliding desktop application that has 4 types of supported schedulers:
 1. FCFS
-2. 2. SJF (Preemptive and Non Preemptive)
+2. SJF (Preemptive and Non Preemptive)
 3. Priority (Preemptive and Non Preemptive) (the smaller the priority number the
 higher the priority)
 4. Round Robin

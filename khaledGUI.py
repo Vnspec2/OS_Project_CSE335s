@@ -9,6 +9,7 @@ from pip._internal.operations import build
 
 P_num=0
 rr_Q=0
+my_entries = []
 
 def choosenprocess():  #check if user choose round robin to enable the quantum scale to choose the quantum time
 
@@ -38,9 +39,15 @@ def process_scale_0(value=None):    #if the user set the number of processes to 
 def quantum_scale_0(value=None):     #if the user set the quantum time to 0 if he coosed round robin scheduling
     if(quantum_scale.get()==0):
         next_buttom['state'] = DISABLED
-
+def appending_shit(val):
+    my_entries.append(val)
 
 def next_scr():
+    def test12():
+        entry_list = ''
+        for entries in my_entries:
+            entry_list = entry_list + str(entries.get()) + '\n'
+            my_label.config(text=entry_list)
     P_num=process_no_scale.get()
     rr_Q=quantum_scale.get()
     win1_frame.destroy()
@@ -51,7 +58,12 @@ def next_scr():
     frame_2nd_label.pack(side=TOP)
     frame_2nd_slider=Frame(window)
     frame_2nd_slider.pack(side=LEFT)
-
+    frame_button=Frame(window)
+    frame_button.pack(side=BOTTOM)
+    button1212=Button(frame_button,text="test",command=test12)
+    button1212.pack()
+    my_label=Label(frame_button,text='')
+    my_label.pack(side=BOTTOM)
     for label in labels:
         Name_label = Label(frame_2nd_label, text=label,state=DISABLED)
         Name_label.pack(side=LEFT,padx=90)
@@ -67,6 +79,9 @@ def next_scr():
            else:
                in_slider = Scale(frame_2nd_slider, from_=0, to=12, resolution=1)
                in_slider.grid(row=num,column=num1,pady=5,padx=90)
+               my_entries.append(in_slider)
+
+
 
 
 
@@ -76,7 +91,7 @@ def next_scr():
 
 window=Tk()
 # add widgets here
-window.resizable(False,False)
+window.resizable(True,True)
 processes=["fcfs","sjf premitive","sjf non premitive","priority premitive","priority non premitive","round robin"]
 x=StringVar()
 y=DoubleVar();

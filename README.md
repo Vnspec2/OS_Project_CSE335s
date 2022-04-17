@@ -12,4 +12,4 @@ according to the scheduler type.
 Time line showing the order and time taken by each process (Gantt Chart) +
 Average waiting time.
 ## Code Status
-![Status](https://img.shields.io/badge/Status-not%20finished-red)
+![build](https://img.shields.io/badge/build-in%20progress-orange)

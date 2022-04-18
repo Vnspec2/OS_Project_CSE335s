@@ -1,3 +1,4 @@
+
 from fns import *
 def choosenprocess():  #check if user choose round robin to enable the quantum scale to choose the quantum time
 
@@ -29,6 +30,9 @@ def quantum_scale_0(value=None):     #if the user set the quantum time to 0 if h
         next_buttom['state'] = DISABLED
 
 def next_scr():
+    def reset():
+        python = sys.executable
+        os.execl(python, python, *sys.argv)
 
     #create new window after clicking next button
     def test12():
@@ -50,6 +54,7 @@ def next_scr():
         if (x.get() in ["priority premitive"]):
            avgt= priority_preem(int(process_no_scale.get()))
            Name_label.config(text="average waiting time is " + str(avgt))
+        calculate_button.config(state=DISABLED)
 
     new_window=Tk()
     columnn=1
@@ -83,8 +88,10 @@ def next_scr():
             pt1.append(priorityindex)
     calculate_button=Button(new_window,text="calculate",command=test12)
     calculate_button.grid(column=5)
-    Name_label = Label(new_window,text='average waiting time is ')
+    Name_label = Label(new_window,text='average waiting time is ',font=('Times', 24))
     Name_label.grid(column=8, row=4)
+    reset_button = Button(new_window, text="reset", command=reset)
+    reset_button.grid(column=5, row=6)
 
 
 
@@ -120,7 +127,9 @@ input_submit_button.grid(column=2)
 
 next_buttom=Button(window,text="Next",state=DISABLED,command=next_scr)
 next_buttom.grid(column=2 ,pady=20)
+hint_label=Label(window,text="to enable next button \n -click on submit button \n -check  number of processes >0 \n  -quantum(if RR is choosen) >0 \n -a schedule is choosen ",font=('Times', 12))
+hint_label.grid(column=2)
 
 window.title('scheduler assignment')
-window.geometry("900x500")
+window.geometry("1000x1000")
 window.mainloop()

@@ -45,7 +45,7 @@ def next_scr():
         if (x.get() in ["sjf premitive"]):
             avgt=SJFpreem(int(process_no_scale.get()))
             Name_label.config(text="average waiting time is " + str(avgt))
-        if (x.get() in ["priority non premitivee"]):
+        if (x.get() in ["priority non premitive"]):
            avgt= Prioritynon(int(process_no_scale.get()))
            Name_label.config(text="average waiting time is " + str(avgt))
         if (x.get() in ["round robin"]):
